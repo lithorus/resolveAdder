@@ -59,7 +59,7 @@ QLineEdit[fail=true]
      <item>
       <widget class="QLineEdit" name="regexInput">
        <property name="text">
-        <string>.*\.\d+\.tif$</string>
+        <string/>
        </property>
       </widget>
      </item>

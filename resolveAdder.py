@@ -42,13 +42,6 @@ def pathWalker(dirpath, prog):
 class resolveAdder():
     def __init__(self, startPath):
         self.app = QtWidgets.QApplication(sys.argv)
-        # super(QtWidgets.QMainWindow, self).__init__()
-
-        # self.ui.inputPathInput = QtWidgets.QLineEdit()
-        # self.ui.browseButton = QtWidgets.QPushButton()
-        # self.ui.searchButton = QtWidgets.QPushButton()
-        # self.ui.fileTreeWidget = QtWidgets.QTreeWidget()
-        # self.ui.regexInput = QtWidgets.QLineEdit()
 
         loader = QtUiTools.QUiLoader()
 
@@ -75,10 +68,8 @@ class resolveAdder():
         try:
             re.compile(regex)
             self.ui.regexInput.setProperty('fail', False)
-            print("Not Fail")
         except re.error:
             self.ui.regexInput.setProperty('fail', True)
-            print("Fail")
         self.ui.regexInput.style().unpolish(self.ui.regexInput)
         self.ui.regexInput.style().polish(self.ui.regexInput)
 
@@ -99,7 +90,6 @@ class resolveAdder():
         self.ui.fileTreeWidget.resizeColumnToContents(2)
 
     def accept(self):
-        print("Accept")
         for index in range(0, self.ui.fileTreeWidget.topLevelItemCount()):
             fileEntry = self.ui.fileTreeWidget.topLevelItem(index)
             if fileEntry.checkState(2) == QtCore.Qt.Checked:
